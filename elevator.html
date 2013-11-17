@@ -1,0 +1,61 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <title>Elevator Simulator</title>
+  <script type="text/javascript" src='elevator.js'></script>
+  <script type="text/javascript" src='CallCue.js'></script>
+  <script type="text/javascript" src='FloorCue.js'></script>
+  <script type="text/javascript" src='utilities.js'></script>
+  <script type="text/javascript">
+
+/* Elevator policies
+
+ - non-empty elevator must continue in its current direction and stop at all floors requested by its passengers before it reverses directions
+ - empty elevator sits idle at last floor
+
+ */
+
+var DOWN = -1, IDLE = 0, UP   = 1;
+
+/////////////////////////////////////////////////////////
+var elevator = new Elevator(0, 10),
+    callcue = new CallCue(),
+    floorcue = new FloorCue();
+
+console.log(elevator.currentState());
+////////////////////////////////////////////////////// 
+
+
+
+
+
+
+////////////////////////////////////////////////////////
+// test
+
+if (callcue.cues.length > 0)
+{
+  // process cue
+  callcue.cues.forEach(function(call, index, arr)
+  {
+
+      console.log("Floor "+call.floor+" wants to go "+ ((call.direction > 0)?"UP":"DOWN"));
+      floorcue.add(call.floor, call.direction);
+
+  });
+
+}
+else 
+{
+  // stop elevator
+  elevator.direction = IDLE;
+}
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+</html>

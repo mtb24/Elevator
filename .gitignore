@@ -1,0 +1,6 @@
+.DS_STORE
+*.xls
+*~
+elevators.js
+data/**
+
