@@ -1,0 +1,8 @@
+.elevator {}
+TABLE.elevator-grid > TBODY > TR > TD {
+	border: black solid 1px;
+}
+
+.current-floor {
+	background-color: yellow;
+}
